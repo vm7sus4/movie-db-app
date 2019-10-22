@@ -1,8 +1,16 @@
-<div class='card'>
-  <div class='card-header'>
-    <p id='main-heading'>Welcome to {{title}}</p>
-  </div>
-  <div class='card-body c-body'>
-    <app-movie-list></app-movie-list>
+<div class='card c-card'>
+  <nav class='navbar navbar-expand navbar-light bg-light'>
+     <a class='navbar-brand ' id='navspan' [routerLink]="['/movie-list']"><img class='inverted' [src]='logo'> {{title}}</a>
+      <ul class='nav nav-tabs' id='navigation'>
+        <li><a class='nav-link' [routerLink]="['/movie-list']">Home</a></li>
+        <li><a class='nav-link' [routerLink]="['/favorites']">Favorites</a></li>
+      </ul>
+  </nav>
+ 
+    <router-outlet></router-outlet>
+  
+
+  <div class='c-footer'>
+
   </div>
 </div>

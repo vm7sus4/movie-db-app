@@ -1,32 +1,18 @@
-<div class='card'>
-    <div class='card-header'>
-        Movie list
-    </div>
+<div class=''>
     
-    <div class='card-body'>
-        <div class='table-responsive'>
-            <table class='table'>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Rank</th>
-                        <th>Title</th>
-                        <th>Rating</th>
-                        <th>Fav Icon</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr *ngFor = 'let movie of movies'>
-                        <td><img [src]='movie.movieBanner'></td>
-                        <td>{{movie.movieRank}}</td>
-                        <td>{{movie.movieTitle}}</td>
-                        <td>{{movie.movieRating}}</td>
-                        <td></td>
-                    </tr>
-                </tbody>   
-                
-            </table>
+    
+    <div class='card-body c-body' >
+      <div class='row movie-row'>
+        <div *ngFor='let movie of movies' class='col-md-2 movies'>
+          <a [routerLink]="['/movie-list', movie.objectId]">
+            <div class='item'>
+            <div><img [src]='movie.image.url'/></div>
+            <div class='movie-title'>{{movie.title}}</div>
+            <div class='movie-rating' id='releaseYear'> {{movie.releaseYear}}
+            </div>
+          </div> </a>
         </div>
+     
+      </div>
     </div>
 </div>
